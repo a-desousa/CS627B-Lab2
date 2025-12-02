@@ -1,0 +1,21 @@
+Option 2: Urban Transport Pass System
+
+Group members: Zhifan Wang (25250031), Assia de Sousa (20361001), Yuliia Litvinchuk (25259013)
+
+1.UsagePolicy:
+We made three fields as required. We chose ArrayList for peakHours and zones since they may have more than one value. The constructor sets all the fields, and then we added getter and setter methods to change or read them easily. 
+
+2.UsageLog:
+We use an ArrayList to keep all the records because they can be many. The log() method saves one record including pass id, type, fare, and date. The printAll() can print out all the records.
+
+3.PassManager:
+The validate() checks if the pass is still valid by comparing today’s date with its validUntil field. The renew() can add some days to extend the pass period.
+
+4. Transport Pass:
+This class contains 3 fields, and methods for the constructor, getters and setters, and a calculate fare method. The method contains the abstract keyword so each subclass will have to create a method to override the general fare calculation method.
+
+5. BusPass, MetroPass, and BikeSharePass:
+These subclasses extend TransportPass and each override the calculateFare() method to define their own fixed fare amounts. They print and return the fare for the respective transport type, demonstrating how different transport modes can share the same structure while customizing behavior.
+
+6. Main:
+Creates instances of each pass, calls their calculateFare() methods, validates and renews passes using PassManager, and logs usage through UsageLog. 
